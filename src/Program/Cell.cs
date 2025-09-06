@@ -1,12 +1,12 @@
 namespace Ucu.Poo.GameOfLife;
-
+/*
+Esta clase implementa la logica del comportamiento de las celulas en el juego "Conway´s game of life"
+*/
 public class Cell
 {
-    public static bool[,] CellNextGeneration(bool[,] currentBoard) {
+    public static bool[,] CellNextGeneration(bool[,] gameBoard) {
         //Éste método es el que se encarga de generar la siguiente generación del juego y
         //de toda la lógica básica que conlleva eso.
-        bool[,] gameBoard = currentBoard;
-        //currentBoard es el estado actual del juego, que se copia a gameBoard
         int boardWidth = gameBoard.GetLength(0);
         int boardHeight = gameBoard.GetLength(1);
         //Se obtienen las dimensiones
@@ -53,10 +53,7 @@ public class Cell
                     }
                 }
             }
-        gameBoard = cloneboard;
         return cloneboard;
-        //Devuelve cloneboard y luego lo que devuelve será usado como currentBoard en,
-        //otro método creando un loop. Si algo de la lógica del juego se quiere cambiar,
-        //tiene que ser cambiado sólo en un lugar y es en este método.
+        //Devuelve el estado del board actualizado
     }
 }
