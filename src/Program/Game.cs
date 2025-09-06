@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using System.Threading;
 
@@ -17,17 +18,18 @@ public class Game
     {
         // Se obtiene el tablero como un array bidimensional de booleanos
         // A partir del metodo "InitialConvert" de la clase "GameTraducer"
-        bool[,] board =GameTraducer.InitialConvert(fileName);
+        bool[,] board =GameTraducer.FileToBool(fileName);
         
         while (true)
         {
+            Console.Clear();
+            Console.Write(GameTraducer.BoolToGameFrame(board));
             // Se retorna un array bidimensional de booleanos con la 
             // siguiente generacion a partir de Cell
-            Cell.CellNextGeneration();
-            
-            GameTraducer.BoolToGameFrame();
+            board = Cell.CellNextGeneration(board);
             
             Thread.Sleep(300);
+            
         }
     }
 }
