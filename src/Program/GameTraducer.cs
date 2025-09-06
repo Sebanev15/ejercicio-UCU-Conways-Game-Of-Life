@@ -1,6 +1,5 @@
 using System.IO;
 using System.Text;
-
 namespace Ucu.Poo.GameOfLife;
 /*
  * Esta clase implementa el patrón Traductor para el juego de Conway, actuando
@@ -8,7 +7,6 @@ namespace Ucu.Poo.GameOfLife;
  */
 public class GameTraducer
 {
-    
     /*
      * Este metodo obtiene la informacion de un archivo de 1´s y 0´s y retorna un array bidimensional de booleanos 
      */
@@ -27,7 +25,6 @@ public class GameTraducer
                 }
             }
         }
-
         return board;
     }
 
@@ -54,8 +51,6 @@ public class GameTraducer
             }
             gameFrame.Append("\n");
         }
-
         return gameFrame.ToString();
     }
-
 }
